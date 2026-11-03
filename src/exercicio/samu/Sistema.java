@@ -70,7 +70,6 @@ public class Sistema {
         }
         return t.toString();
     }
-
     private Tema localizarTema(int idTema) {
         //poderia tambem retorna o indice do tema no array
         for(Tema t:temas) {

@@ -16,7 +16,6 @@ public class Ajuda {
         this.id = id;
         mensagens = new MensagemApoio[5];
     }
-
     public void incrementaApoio(){
         apoio++;
     }

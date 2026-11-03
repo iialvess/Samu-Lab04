@@ -13,7 +13,6 @@ public class Tema {
         this.id = id;
         ajudas = new Ajuda[10];
     }
-
     public int getId() {
         return id;
     }

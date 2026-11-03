@@ -10,5 +10,4 @@ public class Main {
         meuSistema.apoiarAjuda(0);
         System.out.println(meuSistema.exibirAjuda(0));
     }
-
 }

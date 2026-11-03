@@ -15,7 +15,6 @@ public class MensagemApoio {
         this.urlImagem = urlImagem;
     }
 
-
     public String getUrlImagem() {
         return urlImagem;
     }
