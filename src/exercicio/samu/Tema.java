@@ -1,32 +1,58 @@
 package exercicio.samu;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Tema {
     private String nome;
     private int id;
-    private Ajuda[] ajudas;
-    private int contadorAjudas;
+    private List<Ajuda> ajudas;
 
     public Tema(String nome, int id) {
         this.nome = nome;
         this.id = id;
-        ajudas = new Ajuda[10];
+        this.ajudas = new ArrayList<>();
     }
+
     public int getId() {
         return id;
     }
-    public void adicionaAjuda(Ajuda ajuda){
-        ajudas[contadorAjudas++] = ajuda;//atencao para gerencia de arrays
+
+    public String getNome() {
+        return nome;
     }
 
-    public int contarAjudas(){
-        return contadorAjudas;
+    public void adicionaAjuda(Ajuda ajuda) {
+        if (this.ajudas.size() < 100) {
+            this.ajudas.add(ajuda);
+        }
     }
 
-    public String toString(){
-        return nome + "\n"+
-                Arrays.toString(ajudas);
+    public int contarAjudas() {
+        return this.ajudas.size();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tema tema = (Tema) o;
+        return id == tema.id && Objects.equals(nome, tema.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, id);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("TEMA ").append(nome).append(" ").append(id);
+        for (Ajuda ajuda : ajudas) {
+            sb.append("\n | ").append(ajuda.toString());
+        }
+        return sb.toString();
+    }
 }
